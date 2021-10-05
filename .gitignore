@@ -3,4 +3,4 @@ cert.pem
 dist/
 node_modules/
 elm-stuff/
-components/c1/*.js
+components/c1/dist/*.js

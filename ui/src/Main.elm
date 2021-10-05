@@ -2,6 +2,7 @@ module Main exposing (..)
 
 import Browser
 import Html
+import Html.Events
 
 
 type alias Model =
@@ -30,7 +31,10 @@ update msg model =
 
 view : Model -> Html.Html Msg
 view model =
-    Html.div [] [ Html.text (String.fromInt model) ]
+    Html.div []
+        [ Html.text (String.fromInt model)
+        , Html.button [ Html.Events.onClick Increment ] [ Html.text "Inc" ]
+        ]
 
 
 init : Model

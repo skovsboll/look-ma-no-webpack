@@ -6,8 +6,7 @@
     <link rel="icon" href="data:," />
     <script type="importmap">
       {
-        "imports": {
-          "elm": "./ui/dist/app.js",
+        "imports": {          
           "c1": "./components/c1/dist/index.js",
           "c2": "./components/c2/index.js",
           "./components/c1/dist/the-real-thing": "./components/c1/dist/the-real-thing.js"
@@ -15,13 +14,13 @@
         "scopes": {}
       }
     </script>
-    <link rel="modulepreload" href="./ui/dist/app.js">
     <link rel="modulepreload" href="./components/c1/dist/index.js">
     <link rel="modulepreload" href="./components/c1/dist/the-real-thing.js">
     <link rel="modulepreload" href="./components/c2/index.js">
   </head>
 
   <body>
+    <script src="./ui/dist/elmApp.js"></script>
     <script type="module">
       import { MyApplication } from 'c1';
       import C2 from 'c2';

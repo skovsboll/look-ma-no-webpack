@@ -1,6 +1,10 @@
-SOURCES = $(patsubst %.ts,%.js,$(shell find . -name "*.ts" -not -name "*.d.ts"))
+SOURCES = $(patsubst %.ts,dist/%.js,$(shell find . -name "*.ts" -not -name "*.d.ts"))
 
-%.js : %.ts
-	tsc $<
+build: $(SOURCES) dist/main.css
 
-build: $(SOURCES)
+dist/%.js : %.ts
+	tsc $< --outDir dist -m es2020 -t es2020 --esModuleInterop true
+
+dist/main.css: main.css
+	cp $< $@
+
